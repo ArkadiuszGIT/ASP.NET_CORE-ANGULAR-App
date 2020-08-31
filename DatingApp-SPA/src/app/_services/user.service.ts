@@ -21,4 +21,9 @@ export class UserService {
   {
     return this.http.get<User>(this.baseUrl + 'users/' + id);
   }
+
+  // tslint:disable-next-line: typedef
+  updateUser(id: number, user: User) {
+    return this.http.put(this.baseUrl + 'users/' + id, user);
+  }
 }
