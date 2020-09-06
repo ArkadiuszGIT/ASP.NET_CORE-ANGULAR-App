@@ -14,6 +14,8 @@
       <button
         type="button"
         class="btn btn-danger btn-sm"
+        [disabled]="photo.isMain"
+        (click)="deletePhoto(photo.id)"
       >
         <i class="fa fa-trash-o"></i>
       </button>
