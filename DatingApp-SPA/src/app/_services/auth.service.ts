@@ -19,12 +19,10 @@ export class AuthService {
 
 constructor(private http: HttpClient) { }
 
-  // tslint:disable-next-line: typedef
   changeMemberPhoto(photoUrl: string) {
     this.photoUrl.next(photoUrl);
   }
 
-  // tslint:disable-next-line: typedef
   login(model: any)
   {
     return this.http.post(this.baseUrl + 'login', model)
@@ -42,12 +40,10 @@ constructor(private http: HttpClient) { }
       );
   }
 
-  // tslint:disable-next-line: typedef
-  register(model: any) {
-    return this.http.post(this.baseUrl + 'register', model);
+  register(user: User) {
+    return this.http.post(this.baseUrl + 'register', user);
   }
 
-  // tslint:disable-next-line: typedef
   loggedIn() {
     const token = localStorage.getItem('token');
     return !this.jwtHelper.isTokenExpired(token);
