@@ -36,7 +36,6 @@ import { ListsResolver } from './_resolvers/lists.resolver';
 import { MessagesResolver } from './_resolvers/messages.resolver';
 import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 
-// tslint:disable-next-line: typedef
 export function tokenGetter() {
   return localStorage.getItem('token');
 }
@@ -74,7 +73,6 @@ export function tokenGetter() {
     TimeagoModule.forRoot(),
     JwtModule.forRoot({
       config: {
-        // tslint:disable-next-line: object-literal-shorthand
         tokenGetter: tokenGetter,
         allowedDomains: ['localhost:5000'],
         disallowedRoutes: ['localhost:5000/api/auth'],
